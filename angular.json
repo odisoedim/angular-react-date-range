@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1, 
+  "newProjectRoot": "projects",
+  "projects": {
+    "@lookaberry/angular-react-dates": {
+      "projectType": "library",
+      "root": "projects/lookaberry/angular-react-dates",
+      "sourceRoot": "projects/lookaberry/angular-react-dates/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lookaberry/angular-react-dates/tsconfig.lib.json",
+            "project": "projects/lookaberry/angular-react-dates/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lookaberry/angular-react-dates/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lookaberry/angular-react-dates/src/test.ts",
+            "tsConfig": "projects/lookaberry/angular-react-dates/tsconfig.spec.json",
+            "karmaConfig": "projects/lookaberry/angular-react-dates/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lookaberry/angular-react-dates/tsconfig.lib.json",
+              "projects/lookaberry/angular-react-dates/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "@lookaberry/angular-react-dates"
+}
