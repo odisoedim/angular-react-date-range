@@ -1,6 +1,6 @@
 {
-  "name": "angular-react-dates",
-  "version": "0.0.4",
+  "name": "angular-react-date-range",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
