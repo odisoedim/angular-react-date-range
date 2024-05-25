@@ -1,31 +1,31 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, forwardRef, Input } from '@angular/core';
+import { Component, OnInit, forwardRef, ViewChild, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { DateRangePickerWrapper } from './react/date-range-picker-wrapper/date-range-picker-wrapper';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { SingleDatePickerWrapper } from './react/single-date-picker-wrapper/single-date-picker-wrapper';
 
 @Component({
-  selector: 'angular-single-date-picker',
-  template: '<div #singleDatePicker></div>',
+  selector: 'ng-date-range-picker',
+  template: '<div #dateRangePicker></div>',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SingleDatePickerComponent),
+      useExisting: forwardRef(() => DateRangePickerComponent),
       multi: true
     }
   ]
 })
-export class SingleDatePickerComponent implements OnInit, ControlValueAccessor, AfterViewInit {
+export class DateRangePickerComponent implements OnInit, ControlValueAccessor, AfterViewInit {
 
   // Element reference
-  @ViewChild('singleDatePicker')
-  singleDatePicker: ElementRef;
+  @ViewChild('dateRangePicker')
+  dateRangePicker: ElementRef;
 
   @Input()
   props: any;
 
-  // Date value
-  private date: any;
+  // Dates values
+  private dateRange: any;
 
   ngOnInit(): void {
     // Initialize props if not specified
@@ -35,24 +35,24 @@ export class SingleDatePickerComponent implements OnInit, ControlValueAccessor, 
 
     // Set some default props
     this.props.ngComponent = this;
-    this.props.date = this.date;
+    this.props.dateRange = this.dateRange;
   }
 
   ngAfterViewInit(): void {
-    let container: any = this.singleDatePicker.nativeElement;
+    let container: any = this.dateRangePicker.nativeElement;
     ReactDOM.render(
-      React.createElement(SingleDatePickerWrapper, this.props, null),
+      React.createElement(DateRangePickerWrapper, this.props, null),
       container
     );
   }
 
   get value(): any {
-    return this.date;
+    return this.dateRange;
   };
 
   set value(v: any) {
-    if (v !== this.date) {
-      this.date = v;
+    if (v !== this.dateRange) {
+      this.dateRange = v;
       this.onChangeCallback(v);
     }
   }
@@ -61,17 +61,17 @@ export class SingleDatePickerComponent implements OnInit, ControlValueAccessor, 
     this.onTouchedCallback();
   }
 
-  writeValue(value: any): void {
-    if (value !== this.date) {
+  writeValue(rangeModel: any): void {
+    if (rangeModel !== this.dateRange) {
       // Update this angular component
-      this.date = value;
+      this.dateRange = rangeModel;
 
       // Update react component value
-      this.updateReactDate(value);
+      this.updateReactDateRange(rangeModel);
     }
   }
 
-  updateReactDate(date: any): void {
+  updateReactDateRange(dateRange: any): void {
     // Initially empty. This function is replaced when react component is created with its context.
   };
 

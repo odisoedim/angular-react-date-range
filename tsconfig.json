@@ -19,9 +19,9 @@
       "dom"
     ],
     "paths": {
-      "@lookaberry/angular-react-dates": [
-        "dist/lookaberry/angular-react-dates/lookaberry-angular-react-dates",
-        "dist/lookaberry/angular-react-dates"
+      "@odiso/ng-react-dates": [
+        "dist/odiso/ng-react-dates/lookaberry-ng-react-dates",
+        "dist/odiso/ng-react-dates"
       ]
     }
   },

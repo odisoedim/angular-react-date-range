@@ -1,6 +1,6 @@
 {
-  "name": "@lookaberry/angular-react-dates",
-  "version": "0.0.4",
+  "name": "@odiso/ng-react-dates",
+  "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^9.0.2",
     "@angular/core": "^9.0.2",

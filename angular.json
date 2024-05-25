@@ -3,38 +3,38 @@
   "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "@lookaberry/angular-react-dates": {
+    "@odiso/ng-react-dates": {
       "projectType": "library",
-      "root": "projects/lookaberry/angular-react-dates",
-      "sourceRoot": "projects/lookaberry/angular-react-dates/src",
+      "root": "projects/odiso/ng-react-dates",
+      "sourceRoot": "projects/odiso/ng-react-dates/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/lookaberry/angular-react-dates/tsconfig.lib.json",
-            "project": "projects/lookaberry/angular-react-dates/ng-package.json"
+            "tsConfig": "projects/odiso/ng-react-dates/tsconfig.lib.json",
+            "project": "projects/odiso/ng-react-dates/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/lookaberry/angular-react-dates/tsconfig.lib.prod.json"
+              "tsConfig": "projects/odiso/ng-react-dates/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/lookaberry/angular-react-dates/src/test.ts",
-            "tsConfig": "projects/lookaberry/angular-react-dates/tsconfig.spec.json",
-            "karmaConfig": "projects/lookaberry/angular-react-dates/karma.conf.js"
+            "main": "projects/odiso/ng-react-dates/src/test.ts",
+            "tsConfig": "projects/odiso/ng-react-dates/tsconfig.spec.json",
+            "karmaConfig": "projects/odiso/ng-react-dates/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/lookaberry/angular-react-dates/tsconfig.lib.json",
-              "projects/lookaberry/angular-react-dates/tsconfig.spec.json"
+              "projects/odiso/ng-react-dates/tsconfig.lib.json",
+              "projects/odiso/ng-react-dates/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -43,5 +43,5 @@
         }
       }
     }},
-  "defaultProject": "@lookaberry/angular-react-dates"
+  "defaultProject": "@odiso/ng-react-dates"
 }
